@@ -1,19 +1,24 @@
 # MVP = 
 import math
  
+ 
 subTotal = input("What is the total of your bill?\n")
 people = input("How many people are you dining with? Include yourself.\n")
-chosenTip = input ("What percentage tip would you like to give? Example: 15% is 15.\n")
-totalCost = int(subTotal)/int(people)
-print ("The cost of your bill pre-tips is " + str(totalCost) + ".")
+tip = input("Would you like to provide a gratituity?\n")
+chosenTipPercentage = input("What percentage for gratituity would you like to give? Example: 15% is 15.\n")
 
-# tip = input("Would you like to include tip? Yes or No? \n")
+if tip[0].lower() == "y":
+    numericalTip = (int(chosenTipPercentage)/100) 
+    tipTotal = int(subTotal) * int(numericalTip)
+else: 
+    tipTotal = 0 
+    print("Okay, Mr. Krabs. We see you.")
 
-# if tip[0].lower() == "y":
-#     chosenTip = input("What percentage tip would you like to give? Example: 15% is 15.\n")
+finalTotal = int(subTotal) + int(tipTotal)
+CostPerPerson = int(finalTotal)/int(people)
+print ("Each person needs to pay $" + str(CostPerPerson) + ".")
 
-#     elif  
-
+  
 
 # final = math.ceil(totalCostWithTax)
 # print ("Each person must pay $" + ".")
